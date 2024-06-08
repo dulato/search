@@ -3,6 +3,7 @@
 
 *, body {
     font-family: $roboto;
+    font-style: normal;
     color: $black;
 }
 
@@ -11,5 +12,5 @@
     max-width: $container;
     width: 100%;
     margin: $margin;
-    padding: 0 20px;
+    padding: 0 15px;
 }
