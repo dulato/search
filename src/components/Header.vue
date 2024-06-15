@@ -1,20 +1,29 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import { list } from '@/config/countries';
+import { ItemTheme } from '@/types/City';
 import MainButton from '@/components/header/MainButton.vue';
 
 const props = defineProps<{
     id: number,
 }>();
 
-const emit = defineEmits(['choose']);
+const emit = defineEmits(['choose', 'search', 'clear']);
 
 const searchValue = ref('');
 
-const item = computed(() => list.find((elem) => elem.id === props.id));
+const item = computed(() => list.find((elem: ItemTheme) => elem.id === props.id));
 
 const selectCountry = () => {
     emit('choose');
+};
+
+const searchCity = async () => {
+    if(searchValue.value.length > 0) {
+        emit('search', searchValue.value);
+    } else {
+        emit('clear');
+    }
 };
 </script>
 
@@ -37,16 +46,22 @@ const selectCountry = () => {
                         </template>
                     </MainButton>
                 </div>
-                <div class="header__search">
+                <form class="header__search" @submit.prevent="searchCity">
                     <input 
                         type="text" 
                         id="search"
-                        v-model="searchValue"
+                        v-model.trim="searchValue"
                         class="header__search-input"
                         placeholder="Type a place name"
                         autocomplete="off"
                     >
-                </div>
+                    <button 
+                        type="submit"
+                        class="header__search-btn"
+                    >
+                        <img src="@/assets/icons/search.png" alt="icon">
+                    </button>
+                </form>
             </div>
         </div>
     </div>
@@ -82,12 +97,19 @@ const selectCountry = () => {
         color: $white;
     }
 
+    &__search {
+        display: flex;
+        align-items: center;
+        // position: relative;
+    }
+
     &__search-input {
         display: block;
         width: 100%;
+        height: 44px;
         padding: 12px;
         background: $light;
-        border-radius: 5px;
+        border-radius: 5px 0 0 5px;
         border: none;
         outline: none;
         font-size: 16px;
@@ -97,6 +119,24 @@ const selectCountry = () => {
 
         &::placeholder {
             color: $gray;
+        }
+    }
+
+    &__search-btn {
+        display: block;
+        border: none;
+        width: 100%;
+        height: 100%;
+        max-width: 44px;
+        max-height: 44px;
+        background: $light;
+        border-radius: 0 5px 5px 0;
+        text-align: center;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
         }
     }
 }

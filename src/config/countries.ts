@@ -1,3 +1,5 @@
+import { ItemTheme } from '@/types/City';
+
 import thailandFlag from '@/assets/icons/flag-thailand.png';
 import indiaFlag from '@/assets/icons/flag-india.png';
 import singaporeFlag from '@/assets/icons/flag-singapore.png';
@@ -6,7 +8,7 @@ import thailand from '@/assets/images/image-thailand.jpg';
 import india from '@/assets/images/image-india.jpg';
 import singapore from '@/assets/images/image-singapore.jpg';
 
-export const list = [
+export const list: ItemTheme[] = [
     {
         id: 1,
         name: 'Thailand',
