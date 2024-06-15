@@ -90,5 +90,9 @@ const searchRes = async (val: string) => {
   max-width: 100%;
   width: 100%;
   background: $white;
+  padding-top: constant(safe-area-inset-top);
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
 }
 </style>

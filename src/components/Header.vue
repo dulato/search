@@ -76,6 +76,8 @@ const searchCity = async () => {
     top: 0;
     width: 100%;
     background: $green;
+    padding-top: constant(safe-area-inset-top);
+    padding-top: env(safe-area-inset-top);
     z-index: 99;
 
     &__content {

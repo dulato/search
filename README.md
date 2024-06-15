@@ -42,3 +42,33 @@ To preview the production build:
 ```
 npm run preview
 ```
+
+
+## Build Android/iOS App
+
+To create Android/iOS folder:
+
+```
+npx cap add android
+npx cap add ios
+```
+
+
+## Open Android/iOS App
+
+To open Android/iOS app:
+
+```
+npx cap open android
+npx cap open ios
+```
+
+
+## Update Android/iOS App
+
+To Update Android/iOS folders:
+
+```
+npx cap sync
+npx cap copy
+```
