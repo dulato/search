@@ -79,7 +79,7 @@ const searchCity = async () => {
     z-index: 99;
 
     &__content {
-        padding: 15px 0;
+        padding: 20px 0;
     }
 
     &__top {

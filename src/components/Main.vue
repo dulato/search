@@ -67,7 +67,7 @@ const notEmpty = computed(() => props.city.length > 0);
 
 .main {
     position: relative;
-    padding: 144px 0 40px 0;
+    padding: 154px 0 40px 0;
 
     &__content-cities {
         display: grid;

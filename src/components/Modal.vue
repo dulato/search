@@ -53,7 +53,7 @@ const changeId = (val: number) => {
     top: 0;
     width: 100%;
     height: 100%;
-    padding: 15px;
+    padding: 20px;
     background: rgba($black, 0.25);
     z-index: 111;
 
